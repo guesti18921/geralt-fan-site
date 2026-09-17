@@ -21,7 +21,12 @@ $images = [
 ?>
 <!DOCTYPE html>
 <html lang="<?= htmlspecialchars($_SESSION['lang']) ?>">
-<?php require_once('head.php')?>
+<?php ob_start(); require __DIR__ . '/head.php'; $galleryHead=ob_get_clean(); echo str_replace('</head>', '<style>
+header.gc-cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:40px;max-width:1160px;margin:0 auto;padding:70px 24px 32px;background:transparent;color:#eee;text-align:left}
+header.gc-cover::before{display:none}header.gc-cover img{display:block;max-width:100%;width:auto;height:auto;max-height:72vh;object-fit:contain;margin:auto;border-radius:8px}
+header.gc-cover .header-content{padding:0;margin:0;text-align:left}header.gc-cover h1{font-size:clamp(2rem,4vw,3.6rem);line-height:1.2;color:#e0bd77}header.gc-cover p{font-size:1.2rem;color:#ddd}
+@media(max-width:650px){header.gc-cover{grid-template-columns:1fr;gap:24px;padding:72px 18px 28px}header.gc-cover img{max-height:62vh}header.gc-cover .header-content{text-align:center}header.gc-cover h1{font-size:2rem}}
+</style></head>', $galleryHead); ?>
 
 <body>
     <div class="language-switcher">
@@ -29,7 +34,7 @@ $images = [
         <a href="?lang=ru" class="<?= $_SESSION['lang'] === 'ru' ? 'active' : '' ?>">RU</a>
     </div>
 
-    <header class="parallax" style="background-image: url('images/banners/geralt-header.jpg')">
+    <header class="gc-cover"><img src="images/banners/gallery-cover.jpg" alt="<?= $_SESSION['lang'] === 'ru' ? 'Портрет Геральта' : 'Portrait of Geralt' ?>">
         <div class="header-content">
             <h1><?= htmlspecialchars($lang['gallery_header']) ?></h1>
         </div>
