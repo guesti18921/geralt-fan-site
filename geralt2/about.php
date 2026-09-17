@@ -41,6 +41,14 @@ body.gb-page header.parallax{height:440px;min-height:320px;background-attachment
 .gb-page .gb-source{margin-top:28px;font:13px/1.7 Arial,sans-serif}.gb-page .gb-source a{color:#c7b58e}.gb-page .gb-cta{margin-top:24px}
 @media(max-width:760px){.gb-page .gb-intro{grid-template-columns:1fr}.gb-page .gb-portrait{max-height:370px;object-position:center 25%}.gb-page .gb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gb-page .nav-menu{flex-direction:row;gap:2px}.gb-page .nav-menu li{margin:0}.gb-page .nav-menu a{font-size:14px;padding:8px}.gb-page header.parallax{height:340px}.gb-page .header-content p{font-size:1rem}.gb-page section{scroll-margin-top:130px}}
 @media(max-width:480px){.gb-page main{padding:0 16px}.gb-page .gb-grid{grid-template-columns:1fr}.gb-page .gb-facts{grid-template-columns:1fr;gap:12px}.gb-page .gb-card{padding:20px}.gb-page .gb-jumps a{font-size:14px}.gb-page .header-content h1{font-size:2.1rem}}
+
+header.gc-cover{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:none;height:100vh;height:100svh;min-height:360px;margin:0;padding:24px;background:#080909;overflow:hidden;text-align:center;isolation:isolate}
+header.gc-cover img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;margin:0;border-radius:0;object-fit:contain;z-index:-2}
+header.gc-cover::before{content:"";display:block;position:absolute;inset:0;background:rgba(0,0,0,.3);z-index:-1;pointer-events:none}
+header.gc-cover .header-content{position:relative;width:100%;max-width:1100px;margin:0 auto;padding:20px;text-align:center}
+header.gc-cover h1{color:#fff;font-size:clamp(2rem,4.5vw,4rem);line-height:1.2;text-shadow:0 2px 14px #000;margin-bottom:18px}
+header.gc-cover p{color:#fff;font-size:clamp(1rem,2vw,1.5rem);text-shadow:0 2px 10px #000}
+@media(max-width:650px){header.gc-cover{display:flex;padding:16px;gap:0}header.gc-cover img{max-height:none}header.gc-cover .header-content{padding:12px}}
 </style></head><body class="gb-page"><div class="language-switcher"><a href="?lang=en" class="<?= $_SESSION['lang'] === 'en' ? 'active' : '' ?>" lang="en">EN</a><a href="?lang=ru" class="<?= $_SESSION['lang'] === 'ru' ? 'active' : '' ?>" lang="ru">RU</a></div>
 <?php if ($_SESSION['lang'] === 'ru'): ?><header class="gc-cover"><img src="images/banners/about-cover.jpg" alt="<?= $_SESSION['lang'] === 'ru' ? 'Геральт с мечом' : 'Geralt with a sword' ?>"><div class="header-content"><h1>Геральт из Ривии</h1><p>За легендой о Белом Волке</p></div></header>
 <?php require __DIR__ . '/menu.php'; ?>
