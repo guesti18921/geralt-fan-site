@@ -43,7 +43,7 @@ body.gb-page header.parallax{height:440px;min-height:320px;background-attachment
 @media(max-width:480px){.gb-page main{padding:0 16px}.gb-page .gb-grid{grid-template-columns:1fr}.gb-page .gb-facts{grid-template-columns:1fr;gap:12px}.gb-page .gb-card{padding:20px}.gb-page .gb-jumps a{font-size:14px}.gb-page .header-content h1{font-size:2.1rem}}
 
 header.gc-cover{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:none;height:100vh;height:100svh;min-height:360px;margin:0;padding:24px;background:#080909;overflow:hidden;text-align:center;isolation:isolate}
-header.gc-cover img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;margin:0;border-radius:0;object-fit:contain;z-index:-2}
+header.gc-cover img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;margin:0;border-radius:0;object-fit:cover;object-position:center 25%;z-index:-2}
 header.gc-cover::before{content:"";display:block;position:absolute;inset:0;background:rgba(0,0,0,.3);z-index:-1;pointer-events:none}
 header.gc-cover .header-content{position:relative;width:100%;max-width:1100px;margin:0 auto;padding:20px;text-align:center}
 header.gc-cover h1{color:#fff;font-size:clamp(2rem,4.5vw,4rem);line-height:1.2;text-shadow:0 2px 14px #000;margin-bottom:18px}
