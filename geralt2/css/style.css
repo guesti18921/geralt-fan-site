@@ -691,3 +691,13 @@ footer {
     line-height: 1.3;
     word-break: break-word;
 }
+
+/* Показываем открытое окно с фотографией */
+#imageModal {
+    opacity: 1;
+}
+
+/* Подпись не перехватывает нажатие на фото */
+.gallery-item p {
+    pointer-events: none;
+}
