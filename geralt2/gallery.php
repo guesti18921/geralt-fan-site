@@ -120,6 +120,7 @@ $images = [
         viewer.addEventListener('close', () => {
             document.body.style.overflow = oldOverflow;
             opener?.focus();
+            opener?.blur();
         });
         viewer.addEventListener('keydown', event => {
             if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
